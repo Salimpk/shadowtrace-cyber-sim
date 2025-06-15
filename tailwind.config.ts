@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,16 +53,20 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				// Cyberpunk color palette
+				cyber: {
+					dark: '#0a0a0a',
+					darker: '#050505',
+					green: '#00ff41',
+					cyan: '#00ffff',
+					red: '#ff0040',
+					purple: '#8b5cf6',
+					gray: '#1a1a1a'
 				}
+			},
+			fontFamily: {
+				'cyber': ['Orbitron', 'monospace'],
+				'mono': ['Source Code Pro', 'monospace'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +89,35 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 5px #00ff41, 0 0 10px #00ff41, 0 0 15px #00ff41' 
+					},
+					'50%': { 
+						boxShadow: '0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41' 
+					}
+				},
+				'flicker': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'typewriter': {
+					'0%': { width: '0ch' },
+					'100%': { width: '100%' }
+				},
+				'scanline': {
+					'0%': { top: '0%' },
+					'100%': { top: '100%' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'flicker': 'flicker 0.1s infinite linear alternate',
+				'typewriter': 'typewriter 3s steps(30) forwards',
+				'scanline': 'scanline 2s linear infinite'
 			}
 		}
 	},
